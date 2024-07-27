@@ -75,7 +75,8 @@ Your Spring Boot API should now be accessible at the default port 8080. Open you
 
 You can use the following Postman collection to test the API:
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](docs%2Fpostman%2FCandidates%20API.postman_collection.json)
+<a href="[Candidate API.postman_collection.json](docs%2Fpostman%2FCandidate%20API.postman_collection.json)" target="_blank" rel="noopener noreferrer">
+<img width="auto" height="auto" src="docs/img/postman-button.png" alt="Linkedin"></a></p>
 
 ---
 <br/>
