@@ -14,5 +14,18 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  document-db:
+    image: mongo:6.0.4
+    restart: always
+    container_name: candidate_api_users
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: master
+      MONGO_INITDB_ROOT_PASSWORD: laboratory
+      MONGO_INITDB_DATABASE: users
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db/mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
 volumes:
   mysql_data:
