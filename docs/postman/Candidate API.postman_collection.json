@@ -22,6 +22,16 @@
 										{
 											"name": "Get a candidate by ID",
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJraWQiOiI4M2ZkZDQ3ZS0wNDZmLTRkZjktYWI2ZS05NTdhZjk3Y2RjZTEiLCJhbGciOiJSUzI1NiJ9.eyJvd25lciI6IkxBQk9SQVRPUlkiLCJzdWIiOiJhZG1pbl9sYWJvcmF0b3J5IiwiYXVkIjoiY2xpZW50IiwibmJmIjoxNzIyMTc3NDgyLCJzY29wZSI6WyJyZWFkIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9jYW5kaWRhdGUtYXBpIiwiZXhwIjoxNzIyMTc3NzgyLCJpYXQiOjE3MjIxNzc0ODIsImRhdGVfcmVxdWVzdCI6IjIwMjQtMDctMjhUMTE6Mzg6MDIuOTg3MTU5MjAwIn0.mIHHbhXPDbo9dT34j29jw5g2TH0tjFZ8QH7glWt06Kqufrkc3wc2wFlKEcw1nR46TE4vpYlGvsMGTQ2MIKBif2rqQ1vovSGhiDUpekURMbs4a4qYMfyXxjUpLh0b8l-xKBgyd7zwDhasP0zU3OpbkLGc3t0BZiADw5SSZTwHUsrIzK7boYxjrUMmdFRTC2oQ13M_kk21tA-T7ovliz2HK2eX8EtlzcMnABiDg8FuxPfA2tvWSZy3WGreUeoZAqbY7gOQTJ1RUgIQiK27kF79tIM95zUMIoxSwk-ruZMoSufPnQToY7JhddvQEt57vD2xGPPkvzovu_Ohr2lHR8gbbw",
+															"type": "string"
+														}
+													]
+												},
 												"method": "GET",
 												"header": [
 													{
@@ -61,11 +71,14 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v1/candidate/:id",
+															"raw": "http://localhost:8080/candidate-api/api/v1/candidate/:id",
+															"protocol": "http",
 															"host": [
-																"{{baseUrl}}"
+																"localhost"
 															],
+															"port": "8080",
 															"path": [
+																"candidate-api",
 																"api",
 																"v1",
 																"candidate",
@@ -242,11 +255,14 @@
 															}
 														},
 														"url": {
-															"raw": "{{baseUrl}}/api/v1/candidate/:id",
+															"raw": "http://localhost:8080/candidate-api/api/v1/candidate/:id",
+															"protocol": "http",
 															"host": [
-																"{{baseUrl}}"
+																"localhost"
 															],
+															"port": "8080",
 															"path": [
+																"candidate-api",
 																"api",
 																"v1",
 																"candidate",
@@ -477,11 +493,14 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v1/candidate/:id",
+															"raw": "http://localhost:8080/candidate-api/api/v1/candidate/:id",
+															"protocol": "http",
 															"host": [
-																"{{baseUrl}}"
+																"localhost"
 															],
+															"port": "8080",
 															"path": [
+																"candidate-api",
 																"api",
 																"v1",
 																"candidate",
@@ -593,6 +612,16 @@
 								{
 									"name": "Get all candidates",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJraWQiOiI4M2ZkZDQ3ZS0wNDZmLTRkZjktYWI2ZS05NTdhZjk3Y2RjZTEiLCJhbGciOiJSUzI1NiJ9.eyJvd25lciI6IkxBQk9SQVRPUlkiLCJzdWIiOiJhZG1pbl9sYWJvcmF0b3J5IiwiYXVkIjoiY2xpZW50IiwibmJmIjoxNzIyMTc3NDgyLCJzY29wZSI6WyJyZWFkIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9jYW5kaWRhdGUtYXBpIiwiZXhwIjoxNzIyMTc3NzgyLCJpYXQiOjE3MjIxNzc0ODIsImRhdGVfcmVxdWVzdCI6IjIwMjQtMDctMjhUMTE6Mzg6MDIuOTg3MTU5MjAwIn0.mIHHbhXPDbo9dT34j29jw5g2TH0tjFZ8QH7glWt06Kqufrkc3wc2wFlKEcw1nR46TE4vpYlGvsMGTQ2MIKBif2rqQ1vovSGhiDUpekURMbs4a4qYMfyXxjUpLh0b8l-xKBgyd7zwDhasP0zU3OpbkLGc3t0BZiADw5SSZTwHUsrIzK7boYxjrUMmdFRTC2oQ13M_kk21tA-T7ovliz2HK2eX8EtlzcMnABiDg8FuxPfA2tvWSZy3WGreUeoZAqbY7gOQTJ1RUgIQiK27kF79tIM95zUMIoxSwk-ruZMoSufPnQToY7JhddvQEt57vD2xGPPkvzovu_Ohr2lHR8gbbw",
+													"type": "string"
+												}
+											]
+										},
 										"method": "GET",
 										"header": [
 											{
@@ -624,11 +653,14 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v1/candidate",
+													"raw": "http://localhost:8080/candidate-api/api/v1/candidate",
+													"protocol": "http",
 													"host": [
-														"{{baseUrl}}"
+														"localhost"
 													],
+													"port": "8080",
 													"path": [
+														"candidate-api",
 														"api",
 														"v1",
 														"candidate"
@@ -686,6 +718,16 @@
 								{
 									"name": "Create a new candidate",
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJraWQiOiI4M2ZkZDQ3ZS0wNDZmLTRkZjktYWI2ZS05NTdhZjk3Y2RjZTEiLCJhbGciOiJSUzI1NiJ9.eyJvd25lciI6IkxBQk9SQVRPUlkiLCJzdWIiOiJhZG1pbl9sYWJvcmF0b3J5IiwiYXVkIjoiY2xpZW50IiwibmJmIjoxNzIyMTc3NDgyLCJzY29wZSI6WyJyZWFkIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9jYW5kaWRhdGUtYXBpIiwiZXhwIjoxNzIyMTc3NzgyLCJpYXQiOjE3MjIxNzc0ODIsImRhdGVfcmVxdWVzdCI6IjIwMjQtMDctMjhUMTE6Mzg6MDIuOTg3MTU5MjAwIn0.mIHHbhXPDbo9dT34j29jw5g2TH0tjFZ8QH7glWt06Kqufrkc3wc2wFlKEcw1nR46TE4vpYlGvsMGTQ2MIKBif2rqQ1vovSGhiDUpekURMbs4a4qYMfyXxjUpLh0b8l-xKBgyd7zwDhasP0zU3OpbkLGc3t0BZiADw5SSZTwHUsrIzK7boYxjrUMmdFRTC2oQ13M_kk21tA-T7ovliz2HK2eX8EtlzcMnABiDg8FuxPfA2tvWSZy3WGreUeoZAqbY7gOQTJ1RUgIQiK27kF79tIM95zUMIoxSwk-ruZMoSufPnQToY7JhddvQEt57vD2xGPPkvzovu_Ohr2lHR8gbbw",
+													"type": "string"
+												}
+											]
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -745,11 +787,14 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/v1/candidate",
+													"raw": "http://localhost:8080/candidate-api/api/v1/candidate",
+													"protocol": "http",
 													"host": [
-														"{{baseUrl}}"
+														"localhost"
 													],
+													"port": "8080",
 													"path": [
+														"candidate-api",
 														"api",
 														"v1",
 														"candidate"
@@ -953,11 +998,14 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/v1/health",
+													"raw": "http://localhost:8080/candidate-api/api/v1/health",
+													"protocol": "http",
 													"host": [
-														"{{baseUrl}}"
+														"localhost"
 													],
+													"port": "8080",
 													"path": [
+														"candidate-api",
 														"api",
 														"v1",
 														"health"
@@ -1051,12 +1099,146 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "oauth2",
+			"item": [
+				{
+					"name": "TOKEN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Parse the response body to JSON\r",
+									"var response = pm.response.json();\r",
+									"\r",
+									"// Extract the access_token from the response\r",
+									"var accessToken = response.access_token;\r",
+									"\r",
+									"// Set the access_token as an environment variable\r",
+									"pm.environment.set(\"access_token\", accessToken);\r",
+									"\r",
+									"// Log the access token to verify it is correctly set\r",
+									"console.log(\"Access Token: \" + accessToken);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "client",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "secret",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic Y2xpZW50OnNlY3JldA=="
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID=8F3C03E633204CAA6ED7400E13A8C0D1"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "redirect_uri",
+									"value": "https://oauthdebugger.com/debug",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "pDfLBO-aj7k6Tm5qVpxYYQ6FhjSlNQMGoShVpLH7FLISBZmX7glH9yAb4WtgWxCQCWWkklQM-3pcJ0k5Ga06kuANlRxVNSdFCrjagsx2cFejAB_AsQgsz6V7oPV_oMzL",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/oauth2/token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJraWQiOiI4ZDMzM2U1OC0xOTVkLTQ4YmYtOTgzMi02Y2EwMTI5MmFhMzkiLCJhbGciOiJSUzI1NiJ9.eyJvd25lciI6IkxBQk9SQVRPUlkiLCJzdWIiOiJhZG1pbl9sYWJvcmF0b3J5IiwiYXVkIjoiY2xpZW50IiwibmJmIjoxNzIyMTc2NTk4LCJzY29wZSI6WyJyZWFkIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9jYW5kaWRhdGUtYXBpIiwiZXhwIjoxNzIyMTc2ODk4LCJpYXQiOjE3MjIxNzY1OTgsImRhdGVfcmVxdWVzdCI6IjIwMjQtMDctMjhUMTE6MjM6MTguNjY2MDUwMTAwIn0.dVTVDsMM7dwo-_OshosmBmF7mFwbG15fIJilxVHTQrU3OLhDGqsI6NbWN2iYaWbsW4lkspXUNpvTS1Pyy_M-cKNZ0Hru1iQXOkl_hRCGrBRu7aQi96yRMliYxBEaWQ6DKIg-6lE1haExIvg2j-HeEXYZ69zV1Cif7o79L4fwov_03qvLnBp79EvY5rqu0yjEmeKj2XsaMooZffgdhcgkkwdYaLLbdr5SKWWMacXxzaLCHJeHBFdUQslB1O8K1EahZrsTVWj913ZA5eCVP5gBjkvcH7eqzGf2WApXR9slCf0IomUBM6oq4YGOxdWuo54EnwoLpuB8P27ThAOhTX5qAg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"variable": [
 		{
 			"key": "baseUrl",
 			"value": "http://localhost:8080/candidate-api"
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "grant_type",
+			"value": "9gTSx3_9J7GBvecfb3M4vbU-zPoUHwHczMC_4kY8es397ggLieQviZP22Hhp_9byWny_OMVm0L2yDcdF6MeJCjHmVxcqDYyfuMdubrWE_nmLknQmaRcaPxAYfEoLyoz7"
 		}
 	]
 }
