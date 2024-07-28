@@ -78,6 +78,127 @@ You can use the following Postman collection to test the API:
 <a href="docs/postman/Candidate%20API.postman_collection.json" target="_blank" rel="noopener noreferrer">
 <img width="auto" height="auto" src="docs/img/postman-button.png" alt="Linkedin"></a></p>
 
+
+## 📚 Get the Token
+
+
+1. Enter the endpoint authorization server:
+>http://localhost:8080/candidate-api/.well-known/oauth-authorization-server
+
+Copy authorization_endpoint
+
+
+```JSON
+{
+"issuer": "http://localhost:8080/candidate-api",
+"authorization_endpoint": "http://localhost:8080/candidate-api/oauth2/authorize",
+"token_endpoint": "http://localhost:8080/candidate-api/oauth2/token",
+"token_endpoint_auth_methods_supported": [
+"client_secret_basic",
+"client_secret_post",
+"client_secret_jwt",
+"private_key_jwt"
+],
+"jwks_uri": "http://localhost:8080/candidate-api/oauth2/jwks",
+"response_types_supported": [
+"code"
+],
+"grant_types_supported": [
+"authorization_code",
+"client_credentials",
+"refresh_token"
+],
+"revocation_endpoint": "http://localhost:8080/candidate-api/oauth2/revoke",
+"revocation_endpoint_auth_methods_supported": [
+"client_secret_basic",
+"client_secret_post",
+"client_secret_jwt",
+"private_key_jwt"
+],
+"introspection_endpoint": "http://localhost:8080/candidate-api/oauth2/introspect",
+"introspection_endpoint_auth_methods_supported": [
+"client_secret_basic",
+"client_secret_post",
+"client_secret_jwt",
+"private_key_jwt"
+],
+"code_challenge_methods_supported": [
+"S256"
+]
+}
+```
+
+
+2. Debugger authorization server:
+>https://oauthdebugger.com/debug
+
+| Key                          | Value                                           |
+|------------------------------|-------------------------------------------------|
+| app.client.id                | client                                          |
+| app.client.secret            | secret                                          |
+| app.client.scope.read        | read                                            |
+| app.client.scope.write       | write                                           |
+| app.client.redirect.debugger | https://oauthdebugger.com/debug                 |
+| app.client.redirect.spring.doc | https://springone.io/authorized               |
+
+
+The following configuration must be respected when changing the scope
+
+![01.png](docs%2Fimg%2F01.png)
+
+Then the form information will be sent with the send button
+
+![02.png](docs%2Fimg%2F02.png)
+
+Username and password are requested
+
+List users
+
+| Username           | Password Not Encrypted |
+|--------------------|------------------------|
+| read_laboratory    | readonly               |
+| admin_laboratory   | admin                  |
+| write_laboratory   | writeonly              |
+
+
+![03.png](docs%2Fimg%2F03.png)
+
+3. Get Grant token
+
+![04.png](docs%2Fimg%2F04.png)
+
+
+4. Use the token to access the API
+
+```bash
+curl --location 'http://localhost:8080/candidate-api/oauth2/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic Y2xpZW50OnNlY3JldA==' \
+--header 'Cookie: JSESSIONID=8F3C03E633204CAA6ED7400E13A8C0D1; JSESSIONID=C3DE96EB791B37D99867D7BB692E5B07' \
+--data-urlencode 'redirect_uri=https://oauthdebugger.com/debug' \
+--data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'code=pDfLBO-aj7k6Tm5qVpxYYQ6FhjSlNQMGoShVpLH7FLISBZmX7glH9yAb4WtgWxCQCWWkklQM-3pcJ0k5Ga06kuANlRxVNSdFCrjagsx2cFejAB_AsQgsz6V7oPV_oMzL'
+```
+5. Use basic authentication to access the API
+
+> Username: client
+> 
+> Password: secret
+
+
+![05.png](docs%2Fimg%2F05.png)
+
+Copy token
+
+![06.png](docs%2Fimg%2F06.png)
+
+Execute endpoints, use toke a barer token
+
+![07.png](docs%2Fimg%2F07.png)
+
+
+
+
 ---
 <br/>
 

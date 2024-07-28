@@ -50,13 +50,13 @@ public class SecurityConfig {
     private String clientId;
     @Value("${app.client.secret}")
     private String clientSecret;
-    @Value("${app.client-scope-read}")
+    @Value("${app.client.scope.read}")
     private String scopeRead;
-    @Value("${app.client-scope-write}")
+    @Value("${app.client.scope.write}")
     private String scopeWrite;
-    @Value("${app.client-redirect-debugger}")
+    @Value("${app.client.redirect.debugger}")
     private String redirectUri1;
-    @Value("${app.client-redirect-spring-doc}")
+    @Value("${app.client.redirect.spring.doc}")
     private String redirectUri2;
 
     private final UserDetailsService userDetailsService;
@@ -105,7 +105,7 @@ public class SecurityConfig {
         authenticationProvider.setUserDetailsService(userDetailsService);
         return authenticationProvider;
     }
-
+/*
     @Bean
     public RegisteredClientRepository registeredClientRepository(BCryptPasswordEncoder encoder) {
         var registeredClient = RegisteredClient
@@ -121,7 +121,23 @@ public class SecurityConfig {
                 .build();
         return new InMemoryRegisteredClientRepository(registeredClient);
     }
+*/
 
+    @Bean
+    public RegisteredClientRepository registeredClientRepository(BCryptPasswordEncoder encoder) {
+        var registeredClient = RegisteredClient
+                .withId(UUID.randomUUID().toString())
+                .clientId(clientId)
+                .clientSecret(encoder.encode(clientSecret))
+                .scope(scopeRead)
+                .scope(scopeWrite)
+                 .redirectUri(redirectUri1)
+                .redirectUri(redirectUri2)
+                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+                .build();
+        return new InMemoryRegisteredClientRepository(registeredClient);
+    }
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {
         return AuthorizationServerSettings.builder().build();
@@ -201,11 +217,11 @@ public class SecurityConfig {
 
 
 
-    private static final String[] PUBLIC_RESOURCES = {"/swagger-ui.html","/swagger-ui/**", "/.well-known/**, ", "/v3/api-docs/**"};
-    private static final String[] USER_RESOURCES = {"/api/v1/candidate-api/**"};
-
     //Health lo deje de ejemplo, pero debe reemplazarse por Actuactor
-    private static final String[] ADMIN_RESOURCES = {"/api/v1/candidate-api/**", "/api/v1/health/**", "/api/v1/user/**"};
+    private static final String[] PUBLIC_RESOURCES = { "/api/v1/health/**","/swagger-ui.html","/swagger-ui/**", "/.well-known/**, ", "/v3/api-docs/**"};
+    private static final String[] USER_RESOURCES = {"/api/v1/candidate/**"};
+
+    private static final String[] ADMIN_RESOURCES = {"/api/v1/user/**"};
     private static final String LOGIN_RESOURCE = "/login";
 
     private static final String APPLICATION_OWNER = "LABORATORY";
