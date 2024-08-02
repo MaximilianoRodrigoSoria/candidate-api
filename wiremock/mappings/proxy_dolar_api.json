@@ -1,0 +1,9 @@
+{
+  "request": {
+    "urlPattern": "/v1/dolares/.*",
+    "method": "GET"
+  },
+  "response": {
+  },
+  "priority": 99
+}

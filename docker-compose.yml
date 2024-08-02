@@ -13,6 +13,8 @@ services:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - example-network
 
   document-db:
     image: mongo:6.0.4
@@ -26,6 +28,34 @@ services:
       - "27017:27017"
     volumes:
       - ./db/mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - example-network
+
+  wiremock-dolar:
+    container_name: wiremock-dolar
+    image: rodolpheche/wiremock
+    ports:
+      - "9001:8080"
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/__files:/home/wiremock/__files
+    command: --verbose
+    networks:
+      - example-network
+
+  redis-candidates:
+    image: redis:latest
+    container_name: redis-candidates
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - example-network
 
 volumes:
   mysql_data:
+  redis-data:
+
+networks:
+  example-network:
